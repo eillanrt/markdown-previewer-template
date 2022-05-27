@@ -87,10 +87,6 @@ This web site is using \`markedjs/marked\`.
   }
   const defaultParsed = marked.parse(defaultText).toString();
 
-  const createdMarkedUp = () => {
-    return { __html: defaultParsed }
-  }
-
   return (
     <div className="container">
       <div className="wrapper">
@@ -99,7 +95,7 @@ This web site is using \`markedjs/marked\`.
       </div>
       <div className="wrapper">
         <p>Preview</p>
-        <div id="preview" dangerouslySetInnerHTML={createdMarkedUp()}></div>
+        <div id="preview" dangerouslySetInnerHTML={{ __html: defaultParsed }}></div>
       </div>
     </div>
   )
